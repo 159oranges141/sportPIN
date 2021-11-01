@@ -15,6 +15,7 @@ class TableViewController: UITableViewController {
 
     var sportNames = ["baseball", "basketball", "football", "other"]
     var sportImages = ["baseball", "basketball", "football", "other"]
+    var sportType = ["ball", "ball", "ball", "other"]
     
     lazy var dataSource = configureDataSource()
     
@@ -58,10 +59,12 @@ class TableViewController: UITableViewController {
         let dataSource = UITableViewDiffableDataSource<Section, String>(
             tableView: tableView,
             cellProvider: { tableView, indexPath, sportNames in
-                let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TableViewCell
 
-            cell.textLabel?.text = sportNames
-                cell.imageView?.image = UIImage(named: self.sportImages[indexPath.row])
+            cell.nameLabel.text = sportNames
+            cell.thumbnailImageView?.image = UIImage(named:
+                self.sportImages[indexPath.row])
+                cell.typeLabel.text = self.sportType[indexPath.row]
             return cell
             }
         )
