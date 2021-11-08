@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E24115A2739009500283C8E /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2411592739009500283C8E /* Sports.swift */; };
+		4E24116927390B6600283C8E /* DiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24116827390B6600283C8E /* DiffableDataSource.swift */; };
+		4E24116C273918BD00283C8E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24116B273918BD00283C8E /* DetailViewController.swift */; };
 		4E6FA17A272FC24C0062DBCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6FA179272FC24C0062DBCB /* AppDelegate.swift */; };
 		4E6FA17C272FC24C0062DBCB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6FA17B272FC24C0062DBCB /* SceneDelegate.swift */; };
 		4E6FA181272FC24C0062DBCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E6FA17F272FC24C0062DBCB /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E2411592739009500283C8E /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
+		4E24116827390B6600283C8E /* DiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSource.swift; sourceTree = "<group>"; };
+		4E24116B273918BD00283C8E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4E6FA176272FC24C0062DBCB /* sportPIN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sportPIN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E6FA179272FC24C0062DBCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E6FA17B272FC24C0062DBCB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +45,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E241163273905E700283C8E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E2411592739009500283C8E /* Sports.swift */,
+				4E24116827390B6600283C8E /* DiffableDataSource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4E241164273905F200283C8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4E6FA1B4272FDDC30062DBCB /* TableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4E241165273905FC00283C8E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4E6FA18F272FC7410062DBCB /* TableViewController.swift */,
+				4E24116B273918BD00283C8E /* DetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		4E6FA16D272FC24C0062DBCB = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +90,11 @@
 		4E6FA178272FC24C0062DBCB /* sportPIN */ = {
 			isa = PBXGroup;
 			children = (
+				4E241165273905FC00283C8E /* Controller */,
+				4E241164273905F200283C8E /* View */,
+				4E241163273905E700283C8E /* Model */,
 				4E6FA179272FC24C0062DBCB /* AppDelegate.swift */,
 				4E6FA17B272FC24C0062DBCB /* SceneDelegate.swift */,
-				4E6FA18F272FC7410062DBCB /* TableViewController.swift */,
-				4E6FA1B4272FDDC30062DBCB /* TableViewCell.swift */,
 				4E6FA17F272FC24C0062DBCB /* Main.storyboard */,
 				4E6FA182272FC24C0062DBCB /* Assets.xcassets */,
 				4E6FA184272FC24C0062DBCB /* LaunchScreen.storyboard */,
@@ -141,9 +174,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E6FA17A272FC24C0062DBCB /* AppDelegate.swift in Sources */,
+				4E24115A2739009500283C8E /* Sports.swift in Sources */,
 				4E6FA1B5272FDDC30062DBCB /* TableViewCell.swift in Sources */,
 				4E6FA190272FC7410062DBCB /* TableViewController.swift in Sources */,
 				4E6FA17C272FC24C0062DBCB /* SceneDelegate.swift in Sources */,
+				4E24116927390B6600283C8E /* DiffableDataSource.swift in Sources */,
+				4E24116C273918BD00283C8E /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
