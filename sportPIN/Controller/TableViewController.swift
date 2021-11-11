@@ -56,6 +56,37 @@ class TableViewController: UITableViewController {
         return dataSource
     }
     
+    // MARK: - Like description
+    
+    @IBOutlet var Like : UILabel!
+    func Description() -> String {
+        var result : String = "I like: "
+        var first : Bool = true
+        var empty : Bool = true
+        for i in self.sports {
+            if i.isFavorite {
+                
+                if empty {
+                    empty = false
+                }
+                
+                if first {
+                    first = false
+                }
+                else {
+                    result.append(", ")
+                }
+                
+                result.append(i.name)
+            }
+        }
+        if empty != true {
+            result.append(".")
+        }
+        return result
+    }
+    
+    
     // MARK: - Leading Swipe Actions
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -76,6 +107,9 @@ class TableViewController: UITableViewController {
             //update cell
             cell.accessoryType = self.sports[indexPath.row].isFavorite ? .checkmark : .none
             
+            //update description
+            self.Like.text = self.Description()
+            
             
             // Call completion handler to dismiss the action button
             completionHandler(true)
@@ -95,7 +129,7 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         // Mark as favorite action
-        let favoriteAction = UIContextualAction(style: .destructive, title: "") { (action, sourceView, completionHandler) in
+        let favoriteAction = UIContextualAction(style: .destructive, title: "") { [self] (action, sourceView, completionHandler) in
             
             let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
             //update source array
@@ -109,6 +143,10 @@ class TableViewController: UITableViewController {
             
             //update cell
             cell.accessoryType = self.sports[indexPath.row].isFavorite ? .checkmark : .none
+            
+            //update description
+            self.Like.text = self.Description()
+            
             // Call completion handler to dismiss the action button
             completionHandler(true)
         }
